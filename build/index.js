@@ -58,7 +58,7 @@ var FacetValue = (function (_React$Component) {
 			if (this.props.range) {
 				return Math.floor(this.props.range.lowerLimit * 0.0001) + " - " + Math.floor(this.props.range.upperLimit * 0.0001);
 			} else {
-				return this.props.value;
+				return this.props.labels && this.props.labels[this.props.value] ? this.props.labels[this.props.value] : this.props.value;
 			}
 		}
 	}, {
@@ -79,6 +79,7 @@ var FacetValue = (function (_React$Component) {
 
 FacetValue.propTypes = {
 	facetName: _react2["default"].PropTypes.string,
+	labels: _react2["default"].PropTypes.object,
 	onSelectFacetValue: _react2["default"].PropTypes.func,
 	range: _react2["default"].PropTypes.object,
 	value: _react2["default"].PropTypes.string
@@ -191,11 +192,14 @@ var CurrentQuery = (function (_React$Component) {
 					return new Error("CurrentQuery: facet not found!");
 				}
 
+				var valueLabels = _this.props.labels.facetValues && _this.props.labels.facetValues[_this.props.data.name] ? _this.props.labels.facetValues[_this.props.data.name] : null;
+
 				var facetValues = selectedFacet.values ? selectedFacet.values.map(function (value, index2) {
 					return _react2["default"].createElement(_facetValue2["default"], {
 						facetName: selectedFacet.name,
 						key: index2,
 						onSelectFacetValue: _this.props.onSelectFacetValue,
+						labels: valueLabels,
 						value: value });
 				}) : _react2["default"].createElement(_facetValue2["default"], {
 					facetName: selectedFacet.name,

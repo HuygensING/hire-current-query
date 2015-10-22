@@ -6,7 +6,8 @@ class FacetValue extends React.Component {
 		if(this.props.range) {
 			return Math.floor(this.props.range.lowerLimit * 0.0001) + " - " + Math.floor(this.props.range.upperLimit * 0.0001);
 		} else {
-			return this.props.value;
+			return this.props.labels && this.props.labels[this.props.value] ?
+				this.props.labels[this.props.value] : this.props.value;
 		}
 	}
 
@@ -23,6 +24,7 @@ class FacetValue extends React.Component {
 
 FacetValue.propTypes = {
 	facetName: React.PropTypes.string,
+	labels: React.PropTypes.object,
 	onSelectFacetValue: React.PropTypes.func,
 	range: React.PropTypes.object,
 	value: React.PropTypes.string

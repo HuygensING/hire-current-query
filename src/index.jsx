@@ -49,6 +49,10 @@ class CurrentQuery extends React.Component {
 				} else {
 					return new Error("CurrentQuery: facet not found!");
 				}
+		
+				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[this.props.data.name] ?
+					this.props.labels.facetValues[this.props.data.name] :
+					null;
 
 				let facetValues = selectedFacet.values ?
 					selectedFacet.values.map((value, index2) =>
@@ -56,6 +60,7 @@ class CurrentQuery extends React.Component {
 							facetName={selectedFacet.name}
 							key={index2}
 							onSelectFacetValue={this.props.onSelectFacetValue}
+							labels={valueLabels}
 							value={value} />)
 					: <FacetValue
 							facetName={selectedFacet.name}

@@ -50,8 +50,8 @@ class CurrentQuery extends React.Component {
 					return new Error("CurrentQuery: facet not found!");
 				}
 		
-				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[this.props.data.name] ?
-					this.props.labels.facetValues[this.props.data.name] :
+				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[selectedFacet.name] ?
+					this.props.labels.facetValues[selectedFacet.name] :
 					null;
 
 				let facetValues = selectedFacet.values ?

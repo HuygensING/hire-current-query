@@ -192,7 +192,7 @@ var CurrentQuery = (function (_React$Component) {
 					return new Error("CurrentQuery: facet not found!");
 				}
 
-				var valueLabels = _this.props.labels.facetValues && _this.props.labels.facetValues[_this.props.data.name] ? _this.props.labels.facetValues[_this.props.data.name] : null;
+				var valueLabels = _this.props.labels.facetValues && _this.props.labels.facetValues[selectedFacet.name] ? _this.props.labels.facetValues[selectedFacet.name] : null;
 
 				var facetValues = selectedFacet.values ? selectedFacet.values.map(function (value, index2) {
 					return _react2["default"].createElement(_facetValue2["default"], {

@@ -1,3 +1,6 @@
+### v1.2.2	(2015/10/28 15:7)
+* Only insert-css when window and document present
+
 ### v1.2.1	(2015/10/22 10:30)
 
 

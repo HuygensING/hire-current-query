@@ -1,11 +1,13 @@
 import React from "react";
+import insertCss from "insert-css";
 
 import FacetValue from "./facet-value";
 
 let fs = require("fs");
-import insertCss from "insert-css";
 let css = fs.readFileSync(__dirname + "/index.css");
-insertCss(css, {prepend: true});
+if (typeof window != 'undefined' && window.document) {
+	insertCss(css, {prepend: true});
+}
 
 class CurrentQuery extends React.Component {
 	toLabel(name) {
@@ -49,7 +51,7 @@ class CurrentQuery extends React.Component {
 				} else {
 					return new Error("CurrentQuery: facet not found!");
 				}
-		
+
 				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[selectedFacet.name] ?
 					this.props.labels.facetValues[selectedFacet.name] :
 					null;

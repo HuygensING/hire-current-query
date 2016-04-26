@@ -148,7 +148,6 @@ var CurrentQuery = (function (_React$Component) {
 			var _this = this;
 
 			var query = this.props.queries.last;
-
 			var searchTerm = query.term !== "" ? _react2["default"].createElement(
 				"li",
 				{ className: "search-term" },
@@ -182,18 +181,19 @@ var CurrentQuery = (function (_React$Component) {
 			}) : null;
 
 			var facets = query.facetValues.map(function (selectedFacet, index) {
-				var facetTitle = undefined;
-				var filteredFacets = _this.props.results.last.facets.filter(function (facet) {
-					return facet.name === selectedFacet.name;
-				});
-
-				if (filteredFacets.length) {
-					facetTitle = filteredFacets[0].name;
-				} else {
-					return new Error("CurrentQuery: facet not found!");
-				}
-
-				var valueLabels = _this.props.labels.facetValues && _this.props.labels.facetValues[selectedFacet.name] ? _this.props.labels.facetValues[selectedFacet.name] : null;
+				var facetTitle = selectedFacet.name;
+				/*				let filteredFacets = (this.props.results.last.facets.filter((facet) =>
+    					facet.name === selectedFacet.name
+    				));
+    
+    				if (filteredFacets.length) {
+    					facetTitle = filteredFacets[0].name;
+    					console.log("CUR_Q", facetTitle);
+    				} else {
+    					return new Error("CurrentQuery: facet not found!");
+    				}
+    
+    */var valueLabels = _this.props.labels.facetValues && _this.props.labels.facetValues[selectedFacet.name] ? _this.props.labels.facetValues[selectedFacet.name] : null;
 
 				var facetValues = selectedFacet.values ? selectedFacet.values.map(function (value, index2) {
 					return _react2["default"].createElement(_facetValue2["default"], {

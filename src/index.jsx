@@ -22,7 +22,6 @@ class CurrentQuery extends React.Component {
 
 	render() {
 		let query = this.props.queries.last;
-
 		let searchTerm = (query.term !== "") ?
 			<li className="search-term">
 				<label>{this.toLabel("term")}</label>
@@ -41,18 +40,19 @@ class CurrentQuery extends React.Component {
 
 		let facets = query.facetValues
 			.map((selectedFacet, index) => {
-				let facetTitle;
-				let filteredFacets = (this.props.results.last.facets.filter((facet) =>
+				let facetTitle = selectedFacet.name;
+/*				let filteredFacets = (this.props.results.last.facets.filter((facet) =>
 					facet.name === selectedFacet.name
 				));
 
 				if (filteredFacets.length) {
 					facetTitle = filteredFacets[0].name;
+					console.log("CUR_Q", facetTitle);
 				} else {
 					return new Error("CurrentQuery: facet not found!");
 				}
 
-				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[selectedFacet.name] ?
+*/				let valueLabels = this.props.labels.facetValues && this.props.labels.facetValues[selectedFacet.name] ?
 					this.props.labels.facetValues[selectedFacet.name] :
 					null;
 

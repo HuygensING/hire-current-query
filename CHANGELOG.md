@@ -1,3 +1,6 @@
+### v1.2.3	(2016/4/26 9:8)
+* Always renders selected facets
+
 ### v1.2.2	(2015/10/28 15:7)
 * Only insert-css when window and document present
 

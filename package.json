@@ -1,6 +1,6 @@
 {
   "name": "hire-current-query",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "",
   "main": "build/index.js",
   "scripts": {

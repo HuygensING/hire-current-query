@@ -1,3 +1,7 @@
+### v3.0.0	(2017/2/6 16:36)
+* Add hi-bump
+* Remove Browserify
+
 ### v2.0.0	(2016/5/10 13:12)
 * Bump react peers to 15.0.2
 * Merge branch 'react-0.14' of https://github.com/huygensing/hire-current-query into react-0.14

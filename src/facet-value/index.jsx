@@ -1,7 +1,6 @@
 import React from "react";
 
 class FacetValue extends React.Component {
-
 	renderValue() {
 		if(this.props.range) {
 			return Math.floor(this.props.range.lowerLimit * 0.0001) + " - " + Math.floor(this.props.range.upperLimit * 0.0001);

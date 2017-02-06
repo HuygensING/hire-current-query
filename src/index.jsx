@@ -1,13 +1,5 @@
 import React from "react";
-import insertCss from "insert-css";
-
 import FacetValue from "./facet-value";
-
-let fs = require("fs");
-let css = fs.readFileSync(__dirname + "/index.css");
-if (typeof window != 'undefined' && window.document) {
-	insertCss(css, {prepend: true});
-}
 
 class CurrentQuery extends React.Component {
 	toLabel(name) {
